@@ -1,14 +1,16 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:interview_challenge/data/datasources/remote/get_all_products_remote_datasource_imp.dart';
-import 'package:interview_challenge/data/repositories/get_all_products_repository_imp.dart';
+import 'package:get_it/get_it.dart';
+import 'package:interview_challenge/core/injection/inject.dart';
 import 'package:interview_challenge/domain/entities/product_entity.dart';
+import 'package:interview_challenge/domain/repositories/get_all_products_repository.dart';
 
 void main() {
-  late GetAllProductsRepositoryImp repository;
+  late GetAllProductsRepository repository;
+
+  setUpAll(() => Inject.init());
 
   setUp(() {
-    repository =
-        GetAllProductsRepositoryImp(GetAllProductsRemoteDataSourceImp());
+    repository = GetIt.I.get<GetAllProductsRepository>();
   });
 
   test('GetAllProductsRepository should exists', () {
