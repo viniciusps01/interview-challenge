@@ -1,10 +1,10 @@
-import 'package:interview_challenge/domain/entities/product_entity.dart';
+import 'package:interview_challenge/data/dtos/product_dto.dart';
 
-class CartItem {
-  final ProductEntity product;
+class CartItemEntity {
+  final ProductDto product;
   final int quantity;
 
-  CartItem({
+  CartItemEntity({
     required this.product,
     required this.quantity,
   });

@@ -1,19 +1,25 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:interview_challenge/data/dtos/cart_item_dto.dart';
 import 'package:interview_challenge/data/dtos/product_dto.dart';
 import 'package:interview_challenge/domain/entities/cart_item_entity.dart';
+
 import 'package:interview_challenge/testing_entries/test_entries.dart';
 
 main() {
   const quantity = 21;
   final ProductDto product = TestEntries.products[0];
+  final json = CartItemDto(product: product, quantity: quantity).toJson();
   late final CartItemEntity cartItem;
 
   setUpAll(() {
-    cartItem = CartItemEntity(product: product, quantity: quantity);
+    cartItem = CartItemDto.fromJson(json);
   });
 
-  test('Product should exist', () {
+  test('CartItem should exist', () {
     expect(cartItem, isNotNull);
+  });
+  test('Should be a CartItem', () {
+    expect(cartItem, isA<CartItemEntity>());
   });
 
   test('Product id should be ${product.id}', () {

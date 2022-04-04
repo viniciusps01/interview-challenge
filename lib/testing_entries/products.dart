@@ -1,7 +1,7 @@
-import '../domain/entities/product_entity.dart';
+import 'package:interview_challenge/data/dtos/product_dto.dart';
 
-final List<ProductEntity> _testProducts = [
-  ProductEntity(
+final List<ProductDto> _testProducts = [
+  ProductDto(
     id: '0000',
     title: 'MacBook',
     description: 'MackBook description',
@@ -9,7 +9,7 @@ final List<ProductEntity> _testProducts = [
     price: 10000.0,
     availableQuantity: 215,
   ),
-  ProductEntity(
+  ProductDto(
     id: '0001',
     title: 'Smartphone',
     description: 'MackBook description',
@@ -17,7 +17,7 @@ final List<ProductEntity> _testProducts = [
     price: 10000.0,
     availableQuantity: 215,
   ),
-  ProductEntity(
+  ProductDto(
     id: '0010',
     title: 'MacBook',
     description: 'MackBook description',
@@ -25,7 +25,7 @@ final List<ProductEntity> _testProducts = [
     price: 10000.0,
     availableQuantity: 215,
   ),
-  ProductEntity(
+  ProductDto(
     id: '0011',
     title: 'MacBook',
     description: 'MackBook description',
@@ -33,7 +33,7 @@ final List<ProductEntity> _testProducts = [
     price: 10000.0,
     availableQuantity: 215,
   ),
-  ProductEntity(
+  ProductDto(
     id: '0100',
     title: 'MacBook',
     description: 'MackBook description',
@@ -43,4 +43,4 @@ final List<ProductEntity> _testProducts = [
   ),
 ];
 
-List<ProductEntity> get products => [..._testProducts];
+List<ProductDto> get products => [..._testProducts];
