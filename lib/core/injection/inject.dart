@@ -1,7 +1,9 @@
 import 'package:get_it/get_it.dart';
 import 'package:interview_challenge/data/datasources/add_product_to_cart_datasource.dart';
+import 'package:interview_challenge/data/datasources/clear_cart_datasource.dart';
 import 'package:interview_challenge/data/datasources/get_all_products_remote_datasource.dart';
 import 'package:interview_challenge/data/datasources/remote/add_product_to_cart_remote_datasource.dart';
+import 'package:interview_challenge/data/datasources/remote/clear_cart_remote_datasource_imp.dart';
 import 'package:interview_challenge/data/datasources/remote/get_all_products_remote_datasource_imp.dart';
 import 'package:interview_challenge/data/datasources/remote/remove_product_from_cart_remote_datasource_imp.dart';
 import 'package:interview_challenge/data/datasources/remote/retrieve_cart_remote_datasource_imp.dart';
@@ -9,10 +11,12 @@ import 'package:interview_challenge/data/datasources/remove_product_from_cart_da
 import 'package:interview_challenge/data/datasources/retrieve_cart_datasource.dart';
 import 'package:interview_challenge/data/dtos/cart_dto.dart';
 import 'package:interview_challenge/data/repositories/add_product_to_cart_repository_imp.dart';
+import 'package:interview_challenge/data/repositories/clear_cart_repository_imp.dart';
 import 'package:interview_challenge/data/repositories/get_all_products_repository_imp.dart';
 import 'package:interview_challenge/data/repositories/remove_product_from_cart_repository_imp.dart';
 import 'package:interview_challenge/data/repositories/retrieve_cart_repository_imp.dart';
 import 'package:interview_challenge/domain/repositories/add_product_to_cart_repository.dart';
+import 'package:interview_challenge/domain/repositories/clear_cart_repository.dart';
 import 'package:interview_challenge/domain/repositories/get_all_products_repository.dart';
 import 'package:interview_challenge/domain/repositories/remove_product_from_cart_repository.dart';
 import 'package:interview_challenge/domain/repositories/retrieve_cart_repository.dart';
@@ -48,6 +52,8 @@ class Inject {
         () => AddProductToCartRemoteDataSourceImp());
     GetIt.I.registerLazySingleton<RemoveProductFromCartDataSource>(
         () => RemoveProductFromCartRemoteDataSourceImp());
+    GetIt.I.registerLazySingleton<ClearCartDataSource>(
+        () => ClearCartRemoteDataSourceImp());
   }
 
   static initRepositories() {
@@ -59,6 +65,8 @@ class Inject {
         () => AddProductToCartRepositoryImp(GetIt.I()));
     GetIt.I.registerLazySingleton<RemoveProductFromCartRepository>(
         () => RemoveProductFromCartRepositoryImp(GetIt.I()));
+    GetIt.I.registerLazySingleton<ClearCartRepositry>(
+        () => ClearCartRepositoryImp(GetIt.I()));
   }
 
   static initUseCases() {
