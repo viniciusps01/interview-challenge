@@ -18,6 +18,8 @@ import 'package:interview_challenge/domain/repositories/remove_product_from_cart
 import 'package:interview_challenge/domain/repositories/retrieve_cart_repository.dart';
 import 'package:interview_challenge/domain/usecases/get_all_products_usecase/get_all_products_usecase.dart';
 import 'package:interview_challenge/domain/usecases/get_all_products_usecase/get_all_products_usecase_imp.dart';
+import 'package:interview_challenge/domain/usecases/remove_product_from_cart_usecase/remove_product_from_cart_usecase.dart';
+import 'package:interview_challenge/domain/usecases/remove_product_from_cart_usecase/remove_product_from_cart_usecase_imp.dart';
 import 'package:interview_challenge/domain/usecases/retrieve_cart_usecase/retrieve_cart_usecase.dart';
 import 'package:interview_challenge/domain/usecases/retrieve_cart_usecase/retrieve_cart_usecase_imp.dart';
 
@@ -66,6 +68,8 @@ class Inject {
         () => RetrieveCartUseCaseImp(GetIt.I()));
     GetIt.I.registerLazySingleton<AddProductToCartUseCase>(
         () => AddProductToCartUseCaseImp(GetIt.I()));
+    GetIt.I.registerLazySingleton<RemoveProductFromCartUseCase>(
+        () => RemoveProductFromCartUseCaseImp(GetIt.I()));
   }
 
   static initControllers() {}
