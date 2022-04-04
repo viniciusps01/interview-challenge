@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:interview_challenge/data/dtos/cart_dto.dart';
 import 'package:interview_challenge/data/dtos/cart_item_dto.dart';
 import 'package:interview_challenge/data/dtos/product_dto.dart';
 import 'package:interview_challenge/domain/entities/cart_entity.dart';
@@ -13,21 +14,22 @@ main() {
     CartItemDto(product: productOne, quantity: quantityOne),
     CartItemDto(product: productTwo, quantity: quantityTwo)
   ];
-  late final CartEntity cart;
+  final json = CartDto(id: '1111', items: items).toJson();
+  late final CartDto cart;
 
   setUpAll(() {
-    cart = CartEntity(id: '1111', items: items);
+    cart = CartDto.fromJson(json);
   });
 
-  test('Cart should exist', () {
+  test('CartDto should exist', () {
     expect(cart, isNotNull);
   });
 
-  test('Should be a cart', () {
+  test('Should be a cartDto', () {
     expect(cart, isA<CartEntity>());
   });
 
-  test('Cart should have 2 items', () {
+  test('CartDto should have 2 items', () {
     expect(cart.items.length, 2);
   });
 }
