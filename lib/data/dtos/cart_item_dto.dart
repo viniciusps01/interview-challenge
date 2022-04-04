@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:interview_challenge/data/dtos/product_dto.dart';
 import 'package:interview_challenge/domain/entities/cart_item_entity.dart';
-import 'package:interview_challenge/domain/entities/product_entity.dart';
 
 class CartItemDto extends CartItemEntity {
   CartItemDto({
@@ -19,7 +18,7 @@ class CartItemDto extends CartItemEntity {
 
   factory CartItemDto.fromMap(Map<String, dynamic> map) {
     return CartItemDto(
-      product: ProductEntity.fromMap(map['product']),
+      product: ProductDto.fromMap(map['product']),
       quantity: map['quantity']?.toInt() ?? 0,
     );
   }
