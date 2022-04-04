@@ -18,7 +18,7 @@ class Inject {
   }
 
   static registerCart() {
-    GetIt.I.registerFactory<CartEntity>(() => CartDto(id: '1111', items: []));
+    GetIt.I.registerFactory<CartDto>(() => CartDto(id: '1111', items: []));
   }
 
   static initDataSources() {
