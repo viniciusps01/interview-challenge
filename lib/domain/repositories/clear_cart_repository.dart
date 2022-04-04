@@ -1,3 +1,3 @@
-abstract class ClearCartRepositry {
+abstract class ClearCartRepository {
   Future<bool> call();
 }
