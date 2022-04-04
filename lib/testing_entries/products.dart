@@ -1,6 +1,6 @@
 import '../domain/entities/product_entity.dart';
 
-final List<ProductEntity> test_products = [
+final List<ProductEntity> _testProducts = [
   ProductEntity(
     id: '0000',
     title: 'MacBook',
@@ -42,3 +42,5 @@ final List<ProductEntity> test_products = [
     availableQuantity: 215,
   ),
 ];
+
+List<ProductEntity> get products => [..._testProducts];
