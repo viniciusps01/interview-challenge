@@ -1,13 +1,19 @@
 import 'package:get_it/get_it.dart';
+import 'package:interview_challenge/data/datasources/add_item_to_cart_datasource.dart';
 import 'package:interview_challenge/data/datasources/get_all_products_remote_datasource.dart';
+import 'package:interview_challenge/data/datasources/remote/add_item_to_cart_remote_datasource.dart';
 import 'package:interview_challenge/data/datasources/remote/get_all_products_remote_datasource_imp.dart';
 import 'package:interview_challenge/data/datasources/remote/retrieve_cart_remote_datasource_imp.dart';
 import 'package:interview_challenge/data/datasources/retrieve_cart_datasource.dart';
 import 'package:interview_challenge/data/dtos/cart_dto.dart';
+import 'package:interview_challenge/data/repositories/add_item_to_cart_repository_imp.dart';
 import 'package:interview_challenge/data/repositories/get_all_products_repository_imp.dart';
 import 'package:interview_challenge/data/repositories/retrieve_cart_repository_imp.dart';
+import 'package:interview_challenge/domain/repositories/add_item_to_cart_repository.dart';
 import 'package:interview_challenge/domain/repositories/get_all_products_repository.dart';
 import 'package:interview_challenge/domain/repositories/retrieve_cart_repository.dart';
+import 'package:interview_challenge/domain/usecases/add_item_to_cart_usecase/add_item_to_cart_usecase.dart';
+import 'package:interview_challenge/domain/usecases/add_item_to_cart_usecase/add_item_to_cart_usecase_imp.dart';
 import 'package:interview_challenge/domain/usecases/get_all_products_usecase/get_all_products_usecase.dart';
 import 'package:interview_challenge/domain/usecases/get_all_products_usecase/get_all_products_usecase_imp.dart';
 import 'package:interview_challenge/domain/usecases/retrieve_cart_usecase/retrieve_cart_usecase.dart';
@@ -31,6 +37,8 @@ class Inject {
         () => GetAllProductsRemoteDataSourceImp());
     GetIt.I.registerLazySingleton<RetrieveCartDataSource>(
         () => RetrieveCartRemoteDataSourceImp());
+    GetIt.I.registerLazySingleton<AddItemToCartDataSource>(
+        () => AddItemToCartRemoteDataSourceImp());
   }
 
   static initRepositories() {
@@ -38,6 +46,8 @@ class Inject {
         () => GetAllProductsRepositoryImp(GetIt.I()));
     GetIt.I.registerLazySingleton<RetrieveCartRepository>(
         () => RetrieveCartRepositoryImp(GetIt.I()));
+    GetIt.I.registerLazySingleton<AddItemToCartRepository>(
+        () => AddItemToCartRepositoryImp(GetIt.I()));
   }
 
   static initUseCases() {
@@ -45,6 +55,8 @@ class Inject {
         () => GetAllProductsUseCaseImp(GetIt.I()));
     GetIt.I.registerLazySingleton<RetrieveCartUseCase>(
         () => RetrieveCartUseCaseImp(GetIt.I()));
+    GetIt.I.registerLazySingleton<AddItemToCartUseCase>(
+        () => AddItemToCartUseCaseImp(GetIt.I()));
   }
 
   static initControllers() {}
