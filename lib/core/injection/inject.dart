@@ -10,6 +10,8 @@ import 'package:interview_challenge/domain/repositories/get_all_products_reposit
 import 'package:interview_challenge/domain/repositories/retrieve_cart_repository.dart';
 import 'package:interview_challenge/domain/usecases/get_all_products_usecase/get_all_products_usecase.dart';
 import 'package:interview_challenge/domain/usecases/get_all_products_usecase/get_all_products_usecase_imp.dart';
+import 'package:interview_challenge/domain/usecases/retrieve_cart_usecase/retrieve_cart_usecase.dart';
+import 'package:interview_challenge/domain/usecases/retrieve_cart_usecase/retrieve_cart_usecase_imp.dart';
 
 class Inject {
   static init() {
@@ -41,6 +43,8 @@ class Inject {
   static initUseCases() {
     GetIt.I.registerLazySingleton<GetAllProductsUseCase>(
         () => GetAllProductsUseCaseImp(GetIt.I()));
+    GetIt.I.registerLazySingleton<RetrieveCartUseCase>(
+        () => RetrieveCartUseCaseImp(GetIt.I()));
   }
 
   static initControllers() {}
