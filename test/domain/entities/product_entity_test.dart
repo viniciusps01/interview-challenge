@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:interview_challenge/domain/entities/product_entity.dart';
 
@@ -9,15 +10,19 @@ main() {
   const imageUrl = 'imageUrlhttps://pixabay.com/images/id-1282241/';
   const price = 10000.0;
   const availableQuantity = 215;
+  const Color color = Colors.green;
+  const categories = ['Laptops'];
 
   setUp(() {
     productOne = ProductEntity(
       id: id,
-      title: title,
+      name: title,
       description: description,
       imageUrl: imageUrl,
       price: price,
       availableQuantity: availableQuantity,
+      color: color,
+      categories: categories,
     );
   });
 
@@ -30,7 +35,7 @@ main() {
   });
 
   test('title should be $title', () {
-    expect(productOne.title, title);
+    expect(productOne.name, title);
   });
 
   test('description should be $description', () {
@@ -47,5 +52,13 @@ main() {
 
   test('imageUrl should be $imageUrl', () {
     expect(productOne.imageUrl, imageUrl);
+  });
+
+  test('Color should be $color', () {
+    expect(productOne.color, color);
+  });
+
+  test('Categories should have length ${categories.length}', () {
+    expect(productOne.categories.length, categories.length);
   });
 }

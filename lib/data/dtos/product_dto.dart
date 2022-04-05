@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ui';
 
 import 'package:interview_challenge/domain/entities/product_entity.dart';
 
@@ -10,34 +11,41 @@ class ProductDto extends ProductEntity {
     required String imageUrl,
     required double price,
     required int availableQuantity,
+    required List<String> categories,
+    required Color color,
   }) : super(
-          id: id,
-          title: title,
-          description: description,
-          imageUrl: imageUrl,
-          price: price,
-          availableQuantity: availableQuantity,
-        );
+            id: id,
+            name: title,
+            description: description,
+            imageUrl: imageUrl,
+            price: price,
+            availableQuantity: availableQuantity,
+            color: color,
+            categories: categories);
 
   Map<String, dynamic> toMap() {
     return {
       'id': id,
-      'title': title,
+      'title': name,
       'description': description,
       'imageUrl': imageUrl,
       'price': price,
       'availableQuantity': availableQuantity,
+      'color': color.value,
+      'categories': categories,
     };
   }
 
   factory ProductDto.fromMap(Map<String, dynamic> map) {
     return ProductDto(
-      id: map['id'] ?? '',
-      title: map['title'] ?? '',
-      description: map['description'] ?? '',
-      imageUrl: map['imageUrl'] ?? '',
-      price: map['price']?.toDouble() ?? 0.0,
-      availableQuantity: map['availableQuantity']?.toInt() ?? 0,
+      id: map['id'],
+      title: map['title'],
+      description: map['description'],
+      imageUrl: map['imageUrl'],
+      price: map['price']?.toDouble(),
+      availableQuantity: map['availableQuantity']?.toInt(),
+      color: Color(map['color']?.toInt()),
+      categories: map['categories'].cast<String>(),
     );
   }
 

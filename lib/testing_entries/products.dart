@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:interview_challenge/data/dtos/product_dto.dart';
 
 final List<ProductDto> _testProducts = [
@@ -8,6 +9,8 @@ final List<ProductDto> _testProducts = [
     imageUrl: 'imageUrlhttps://pixabay.com/images/id-1282241/',
     price: 10000.0,
     availableQuantity: 215,
+    color: Colors.red,
+    categories: ['Laptops'],
   ),
   ProductDto(
     id: '0001',
@@ -16,6 +19,8 @@ final List<ProductDto> _testProducts = [
     imageUrl: 'imageUrlhttps://pixabay.com/images/id-1282241/',
     price: 10000.0,
     availableQuantity: 215,
+    color: Colors.red,
+    categories: ['Laptops'],
   ),
   ProductDto(
     id: '0010',
@@ -24,6 +29,8 @@ final List<ProductDto> _testProducts = [
     imageUrl: 'imageUrlhttps://pixabay.com/images/id-1282241/',
     price: 10000.0,
     availableQuantity: 215,
+    color: Colors.red,
+    categories: ['Laptops'],
   ),
   ProductDto(
     id: '0011',
@@ -32,6 +39,8 @@ final List<ProductDto> _testProducts = [
     imageUrl: 'imageUrlhttps://pixabay.com/images/id-1282241/',
     price: 10000.0,
     availableQuantity: 215,
+    color: Colors.red,
+    categories: ['Laptops'],
   ),
   ProductDto(
     id: '0100',
@@ -40,6 +49,8 @@ final List<ProductDto> _testProducts = [
     imageUrl: 'imageUrlhttps://pixabay.com/images/id-1282241/',
     price: 10000.0,
     availableQuantity: 215,
+    color: Colors.red,
+    categories: ['Laptops'],
   ),
 ];
 
