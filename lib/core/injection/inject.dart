@@ -28,10 +28,10 @@ import 'package:interview_challenge/domain/usecases/remove_product_from_cart_use
 import 'package:interview_challenge/domain/usecases/remove_product_from_cart_usecase/remove_product_from_cart_usecase_imp.dart';
 import 'package:interview_challenge/domain/usecases/retrieve_cart_usecase/retrieve_cart_usecase.dart';
 import 'package:interview_challenge/domain/usecases/retrieve_cart_usecase/retrieve_cart_usecase_imp.dart';
-import 'package:interview_challenge/presentation/controllers/products_controller.dart';
 
 import '../../domain/usecases/add_product_to_cart_usecase/add_product_to_cart_usecase.dart';
 import '../../domain/usecases/add_product_to_cart_usecase/add_product_to_cart_usecase_imp.dart';
+import '../../presentation/products_controller/products_controller.dart';
 
 class Inject {
   static init() {
