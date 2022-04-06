@@ -1,0 +1,61 @@
+import 'package:flutter/material.dart';
+import 'package:interview_challenge/data/dtos/product_dto.dart';
+
+part 'components/card_buttons_and_chosen_quantity.dart';
+part './components/card_data.dart';
+part './components/product_image.dart';
+
+class ProductCard extends StatelessWidget {
+  final ProductDto product;
+  final int chosenQuantity;
+  final Function() onPressed;
+  final Function() onAddPressed;
+  final Function() onRemovePressed;
+
+  const ProductCard({
+    Key? key,
+    required this.product,
+    required this.onPressed,
+    required this.chosenQuantity,
+    required this.onAddPressed,
+    required this.onRemovePressed,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(8),
+      height: 90,
+      decoration: BoxDecoration(
+        color: Colors.grey.shade50,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.grey,
+            offset: Offset(.5, .5),
+            blurRadius: 2,
+          )
+        ],
+      ),
+      child: Row(
+        children: [
+          _CardImage(imageUrl: product.imageUrl),
+          const SizedBox(width: 10),
+          Expanded(
+            child: _CardData(
+              //TODO: use colorName instead of color
+              colorName: product.colorName.toString(),
+              price: product.price,
+              title: product.title,
+            ),
+          ),
+          _CardButtonsAndChosenQuantity(
+            onAddPressed: onAddPressed,
+            onRemovePressed: onRemovePressed,
+            maxQuantity: product.availableQuantity,
+          )
+        ],
+      ),
+    );
+  }
+}
