@@ -16,9 +16,9 @@ class ProductCard extends StatelessWidget {
     Key? key,
     required this.product,
     required this.onPressed,
-    required this.chosenQuantity,
     required this.onAddPressed,
     required this.onRemovePressed,
+    this.chosenQuantity,
   }) : super(key: key);
 
   @override
