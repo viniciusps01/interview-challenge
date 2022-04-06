@@ -7,7 +7,7 @@ part './components/product_image.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductDto product;
-  final int chosenQuantity;
+  final int? chosenQuantity;
   final Function() onPressed;
   final Function() onAddPressed;
   final Function() onRemovePressed;
@@ -43,13 +43,13 @@ class ProductCard extends StatelessWidget {
           const SizedBox(width: 10),
           Expanded(
             child: _CardData(
-              //TODO: use colorName instead of color
-              colorName: product.colorName.toString(),
+              colorName: product.colorName,
               price: product.price,
               title: product.title,
             ),
           ),
           _CardButtonsAndChosenQuantity(
+            chosenQuantity: chosenQuantity ?? 0,
             onAddPressed: onAddPressed,
             onRemovePressed: onRemovePressed,
             maxQuantity: product.availableQuantity,
