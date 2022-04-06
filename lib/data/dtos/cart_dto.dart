@@ -4,8 +4,10 @@ import 'package:interview_challenge/data/dtos/cart_item_dto.dart';
 import 'package:interview_challenge/domain/entities/cart_entity.dart';
 
 class CartDto extends CartEntity {
-  CartDto({required String id, required List<CartItemDto> items})
-      : super(id: id, items: items);
+  CartDto({
+    String? id,
+    List<CartItemDto>? items,
+  }) : super(id: id, items: items);
 
   Map<String, dynamic> toMap() {
     return {
@@ -16,7 +18,7 @@ class CartDto extends CartEntity {
 
   factory CartDto.fromMap(Map<String, dynamic> map) {
     return CartDto(
-      id: map['id'] ?? '',
+      id: map['id'],
       items: List<CartItemDto>.from(
           map['items']?.map((x) => CartItemDto.fromMap(x))),
     );

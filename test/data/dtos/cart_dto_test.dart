@@ -30,6 +30,14 @@ main() {
   });
 
   test('CartDto should have 2 items', () {
-    expect(cart.items.length, 2);
+    expect(cart.itemsQuanity, 2);
+  });
+
+  test('Should have $quantityOne', () {
+    expect(cart.items[0].quantity, quantityOne);
+  });
+
+  test('Should have ${quantityOne + quantityTwo} products', () {
+    expect(cart.productsQuantity, quantityOne + quantityTwo);
   });
 }
