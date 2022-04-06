@@ -3,7 +3,7 @@ import 'dart:ui';
 class ProductEntity {
   final String id;
   final String name;
-  final Color color;
+  final String colorName;
   final String description;
   final List<String> categories;
   final String imageUrl;
@@ -13,7 +13,7 @@ class ProductEntity {
   ProductEntity({
     required this.id,
     required this.name,
-    required this.color,
+    required this.colorName,
     required this.description,
     required this.categories,
     required this.imageUrl,

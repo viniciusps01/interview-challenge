@@ -12,7 +12,7 @@ class ProductDto extends ProductEntity {
     required double price,
     required int availableQuantity,
     required List<String> categories,
-    required Color color,
+    required String colorName,
   }) : super(
             id: id,
             name: title,
@@ -20,7 +20,7 @@ class ProductDto extends ProductEntity {
             imageUrl: imageUrl,
             price: price,
             availableQuantity: availableQuantity,
-            color: color,
+            colorName: colorName,
             categories: categories);
 
   Map<String, dynamic> toMap() {
@@ -31,7 +31,7 @@ class ProductDto extends ProductEntity {
       'imageUrl': imageUrl,
       'price': price,
       'availableQuantity': availableQuantity,
-      'color': color.value,
+      'colorName': colorName,
       'categories': categories,
     };
   }
@@ -44,7 +44,7 @@ class ProductDto extends ProductEntity {
       imageUrl: map['imageUrl'],
       price: map['price']?.toDouble(),
       availableQuantity: map['availableQuantity']?.toInt(),
-      color: Color(map['color']?.toInt()),
+      colorName: map['colorName'],
       categories: map['categories'].cast<String>(),
     );
   }

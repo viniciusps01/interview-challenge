@@ -13,7 +13,7 @@ main() {
   const imageUrl = 'imageUrlhttps://pixabay.com/images/id-1282241/';
   const price = 10000.0;
   const availableQuantity = 215;
-  const color = Colors.green;
+  const color = 'Green';
   const categories = ['Laptops'];
 
   setUpAll(() {
@@ -24,7 +24,7 @@ main() {
       imageUrl: imageUrl,
       price: price,
       availableQuantity: availableQuantity,
-      color: color,
+      colorName: color,
       categories: categories,
     );
 
@@ -62,7 +62,7 @@ main() {
   });
 
   test('Color should be $color', () {
-    expect(productOne.color.value, color.value);
+    expect(productOne.colorName, color);
   });
 
   test('Categories should have length ${categories.length}', () {
