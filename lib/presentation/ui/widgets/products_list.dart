@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:interview_challenge/presentation/ui/pages/details_page/details_page.dart';
 
 import '../../../data/dtos/product_dto.dart';
 import 'product_card/product_card.dart';
@@ -33,7 +34,14 @@ class ProductsList extends StatelessWidget {
                 child: ProductCard(
                   product: product,
                   chosenQuantity: chosenQuantities?[index] ?? 0,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => DetailsPage(product: product),
+                      ),
+                    );
+                  },
                   onAddPressed: () => addProductToCart(product),
                   onRemovePressed: () => removeProductFromCart(product),
                 ),

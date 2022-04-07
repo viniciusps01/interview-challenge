@@ -23,38 +23,44 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      height: 90,
-      decoration: BoxDecoration(
-        color: Colors.grey.shade50,
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.grey,
-            offset: Offset(.5, .5),
-            blurRadius: 2,
-          )
-        ],
-      ),
-      child: Row(
-        children: [
-          _CardImage(imageUrl: product.imageUrl),
-          const SizedBox(width: 10),
-          Expanded(
-            child: _CardData(
-              colorName: product.colorName,
-              price: product.price,
-              title: product.title,
+    return GestureDetector(
+      onTap: () => onPressed(),
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        height: 90,
+        decoration: BoxDecoration(
+          color: Colors.grey.shade50,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.grey,
+              offset: Offset(.5, .5),
+              blurRadius: 2,
+            )
+          ],
+        ),
+        child: Row(
+          children: [
+            Hero(
+              tag: product.id,
+              child: _CardImage(imageUrl: product.imageUrl),
             ),
-          ),
-          _CardButtonsAndChosenQuantity(
-            chosenQuantity: chosenQuantity ?? 0,
-            onAddPressed: onAddPressed,
-            onRemovePressed: onRemovePressed,
-            maxQuantity: product.availableQuantity,
-          )
-        ],
+            const SizedBox(width: 10),
+            Expanded(
+              child: _CardData(
+                colorName: product.colorName,
+                price: product.price,
+                title: product.title,
+              ),
+            ),
+            _CardButtonsAndChosenQuantity(
+              chosenQuantity: chosenQuantity ?? 0,
+              onAddPressed: onAddPressed,
+              onRemovePressed: onRemovePressed,
+              maxQuantity: product.availableQuantity,
+            )
+          ],
+        ),
       ),
     );
   }
