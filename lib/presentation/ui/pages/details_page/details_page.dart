@@ -17,7 +17,6 @@ class DetailsPage extends StatelessWidget {
           SliverAppBar(
             title: Text(product.title),
             pinned: true,
-            floating: true,
             expandedHeight: 300,
             flexibleSpace: FlexibleSpaceBar(
               background: Hero(
