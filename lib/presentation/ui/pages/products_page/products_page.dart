@@ -40,6 +40,7 @@ class ProductsPage extends StatelessWidget {
           isLoadingProducts: _productsController.isLoading,
           products: _productsController.products!,
           removeProductFromCart: _cartController.removeProductFromCart,
+          listEndingSpace: 55,
         );
       }),
     );

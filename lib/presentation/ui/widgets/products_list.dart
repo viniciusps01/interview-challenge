@@ -5,6 +5,7 @@ import '../../../data/dtos/product_dto.dart';
 import 'product_card/product_card.dart';
 
 class ProductsList extends StatelessWidget {
+  final double listEndingSpace;
   final bool isLoadingProducts;
   final List<ProductDto> products;
   final Function(ProductDto) addProductToCart;
@@ -16,6 +17,7 @@ class ProductsList extends StatelessWidget {
     required this.products,
     required this.addProductToCart,
     required this.removeProductFromCart,
+    this.listEndingSpace = 0,
     this.chosenQuantities,
     Key? key,
   }) : super(key: key);
@@ -26,9 +28,15 @@ class ProductsList extends StatelessWidget {
         color: Colors.white,
         padding: const EdgeInsets.all(8),
         child: ListView.builder(
-            itemCount: products.length,
+            itemCount: products.length + 1,
             itemBuilder: (_, index) {
+              //Add
+              if (index == products.length) {
+                return SizedBox(height: listEndingSpace);
+              }
+
               final product = products[index];
+
               return Padding(
                 padding: const EdgeInsets.only(bottom: 10),
                 child: ProductCard(

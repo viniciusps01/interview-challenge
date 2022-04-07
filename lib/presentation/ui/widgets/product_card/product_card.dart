@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:interview_challenge/data/dtos/product_dto.dart';
 
+import '../product_price.dart';
+
 part 'components/card_buttons_and_chosen_quantity.dart';
 part './components/card_data.dart';
 part './components/product_image.dart';
@@ -27,14 +29,15 @@ class ProductCard extends StatelessWidget {
       onTap: () => onPressed(),
       child: Container(
         padding: const EdgeInsets.all(8),
+        margin: const EdgeInsets.all(1),
         height: 90,
         decoration: BoxDecoration(
-          color: Colors.grey.shade50,
+          color: Colors.white,
           borderRadius: BorderRadius.circular(10),
           boxShadow: const [
             BoxShadow(
               color: Colors.grey,
-              offset: Offset(.5, .5),
+              offset: Offset(1, 1),
               blurRadius: 2,
             )
           ],
