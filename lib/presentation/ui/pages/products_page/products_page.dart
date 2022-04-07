@@ -35,6 +35,12 @@ class ProductsPage extends StatelessWidget {
         ),
       ),
       body: Observer(builder: (_) {
+        if (_productsController.isLoading) {
+          return const Center(
+            child: CircularProgressIndicator.adaptive(),
+          );
+        }
+
         return ProductsList(
           addProductToCart: _cartController.addProductToCart,
           isLoadingProducts: _productsController.isLoading,
