@@ -9,17 +9,22 @@ class ProductsController = _ProductsControllerBase with _$ProductsController;
 
 abstract class _ProductsControllerBase with Store {
   final _getAllProductsUseCase = GetIt.I.get<GetAllProductsUseCase>();
+  @observable
   var _isLoading = false;
 
+  @computed
   bool get isLoading => _isLoading;
 
   @observable
-  List<ProductDto>? products;
+  List<ProductDto>? _products;
+
+  @computed
+  List<ProductDto>? get products => _products == null ? null : [..._products!];
 
   @action
   loadProducts() async {
     _isLoading = true;
-    products = await _getAllProductsUseCase();
+    _products = await _getAllProductsUseCase();
     _isLoading = false;
   }
 }
