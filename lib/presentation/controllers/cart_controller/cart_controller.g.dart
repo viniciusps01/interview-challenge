@@ -30,6 +30,13 @@ mixin _$CartController on _CartControllerBase, Store {
           () => super.productsQuantity,
           name: '_CartControllerBase.productsQuantity'))
       .value;
+  Computed<double>? _$totalAmountComputed;
+
+  @override
+  double get totalAmount =>
+      (_$totalAmountComputed ??= Computed<double>(() => super.totalAmount,
+              name: '_CartControllerBase.totalAmount'))
+          .value;
   Computed<int>? _$cartItemsQuantityComputed;
 
   @override
@@ -51,6 +58,21 @@ mixin _$CartController on _CartControllerBase, Store {
   set _productsQuantity(int value) {
     _$_productsQuantityAtom.reportWrite(value, super._productsQuantity, () {
       super._productsQuantity = value;
+    });
+  }
+
+  final _$_totalAmountAtom = Atom(name: '_CartControllerBase._totalAmount');
+
+  @override
+  double get _totalAmount {
+    _$_totalAmountAtom.reportRead();
+    return super._totalAmount;
+  }
+
+  @override
+  set _totalAmount(double value) {
+    _$_totalAmountAtom.reportWrite(value, super._totalAmount, () {
+      super._totalAmount = value;
     });
   }
 
@@ -150,6 +172,7 @@ mixin _$CartController on _CartControllerBase, Store {
 isLoading: ${isLoading},
 items: ${items},
 productsQuantity: ${productsQuantity},
+totalAmount: ${totalAmount},
 cartItemsQuantity: ${cartItemsQuantity}
     ''';
   }

@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:interview_challenge/core/injection/inject.dart';
 import 'package:interview_challenge/data/dtos/product_dto.dart';
 import 'package:interview_challenge/domain/entities/cart_entity.dart';
 import 'package:interview_challenge/testing_entries/test_entries.dart';
@@ -93,6 +92,43 @@ main() {
       cart.addProduct(productOne);
       cart.clearCart();
       expect(cart.productsQuantity, 0);
+    });
+  });
+
+  group('Cart total amount', () {
+    final priceOne = productOne.price;
+    final priceTwo = productTwo.price;
+    test('Total should be 0}', () {
+      expect(cart.totalAmount, 0);
+    });
+
+    test('Total should be $priceOne', () {
+      cart.addProduct(productOne);
+      expect(cart.totalAmount, priceOne);
+    });
+
+    test('Total should be ${2 * priceOne}', () {
+      cart.addProduct(productOne);
+      cart.addProduct(productOne);
+      expect(cart.totalAmount, 2 * priceOne);
+    });
+    test('Total should be ${priceOne + priceTwo}', () {
+      cart.addProduct(productOne);
+      cart.addProduct(productTwo);
+      expect(cart.totalAmount, priceOne + priceTwo);
+    });
+
+    test('Total should be $priceOne', () {
+      cart.addProduct(productOne);
+      cart.addProduct(productTwo);
+      cart.removeProduct(productTwo.id);
+      expect(cart.totalAmount, priceOne);
+    });
+
+    test('Total should be 0', () {
+      cart.addProduct(productOne);
+      cart.clearCart();
+      expect(cart.totalAmount, 0);
     });
   });
 }

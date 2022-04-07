@@ -15,6 +15,9 @@ class CartEntity {
   int get productsQuantity =>
       items.fold(0, (prev, element) => prev + element.quantity);
 
+  double get totalAmount => items.fold(
+      0, (prev, element) => prev + element.quantity * element.product.price);
+
   int get itemsQuanity => items.length;
 
   List<CartItemDto> get items => [..._items];

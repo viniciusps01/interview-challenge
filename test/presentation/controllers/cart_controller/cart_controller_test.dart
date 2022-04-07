@@ -123,4 +123,56 @@ void main() {
       expect(controller.productsQuantity, 0);
     });
   });
+
+  group('Cart total amount', () {
+    final priceOne = productOne.price;
+    final priceTwo = productTwo.price;
+
+    test('Total amount should be 0', () {
+      expect(controller.totalAmount, 0);
+    });
+
+    test('Total amount should be $priceOne', () async {
+      await controller.addProductToCart(productOne);
+      expect(controller.totalAmount, priceOne);
+    });
+
+    test('Total amount should be ${2 * priceOne}', () async {
+      await controller.addProductToCart(productOne);
+      await controller.addProductToCart(productOne);
+      expect(controller.totalAmount, 2 * priceOne);
+    });
+    test('Total amount should be ${priceOne + priceTwo}', () async {
+      await controller.addProductToCart(productOne);
+      await controller.addProductToCart(productTwo);
+      expect(controller.totalAmount, priceOne + priceTwo);
+    });
+
+    test('Total amount should be $priceOne', () async {
+      await controller.addProductToCart(productOne);
+      await controller.addProductToCart(productTwo);
+      await controller.removeProductFromCart(productTwo);
+      expect(controller.totalAmount, priceOne);
+    });
+
+    test('Total amount should be ${priceOne + priceTwo}', () async {
+      await controller.addProductToCart(productOne);
+      await controller.addProductToCart(productTwo);
+      await controller.addProductToCart(productTwo);
+      await controller.removeProductFromCart(productTwo);
+      expect(controller.totalAmount, priceOne + priceTwo);
+    });
+
+    test('Total amount should be 0', () async {
+      await controller.addProductToCart(productOne);
+      await controller.clearCart();
+      expect(controller.totalAmount, 0);
+    });
+
+    test('Total amount should be 0', () async {
+      await controller.addProductToCart(productOne);
+      await controller.retrieveCart();
+      expect(controller.totalAmount, 0);
+    });
+  });
 }

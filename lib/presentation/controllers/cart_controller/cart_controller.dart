@@ -23,6 +23,9 @@ abstract class _CartControllerBase with Store {
   int _productsQuantity = 0;
 
   @observable
+  double _totalAmount = 0;
+
+  @observable
   int _cartItemsQuantity = 0;
 
   @observable
@@ -39,6 +42,9 @@ abstract class _CartControllerBase with Store {
 
   @computed
   int get productsQuantity => _productsQuantity;
+
+  @computed
+  double get totalAmount => _totalAmount;
 
   @computed
   int get cartItemsQuantity => _cartItemsQuantity;
@@ -101,5 +107,6 @@ abstract class _CartControllerBase with Store {
   _onCartUpdated() {
     _cartItemsQuantity = _cart.itemsQuanity;
     _productsQuantity = _cart.productsQuantity;
+    _totalAmount = _cart.totalAmount;
   }
 }
