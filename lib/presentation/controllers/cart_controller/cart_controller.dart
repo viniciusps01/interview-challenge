@@ -19,23 +19,36 @@ abstract class _CartControllerBase with Store {
       GetIt.I.get<RemoveProductFromCartUseCase>();
   final _clearCartUseCase = GetIt.I.get<ClearCartUseCase>();
 
+  @observable
+  int _productsQuantity = 0;
+
+  @observable
+  int _cartItemsQuantity = 0;
+
+  @observable
   var _isLoading = false;
 
-  bool get isLoading => _isLoading;
-
+  @observable
   CartEntity _cart = CartEntity();
 
+  @computed
+  bool get isLoading => _isLoading;
+
+  @computed
   List<CartItemDto> get items => _cart.items;
 
-  int get productsQuantity => _cart.productsQuantity;
+  @computed
+  int get productsQuantity => _productsQuantity;
 
-  int get cartItemsQuantity => _cart.itemsQuanity;
+  @computed
+  int get cartItemsQuantity => _cartItemsQuantity;
 
   @action
   retrieveCart() async {
     try {
       _isLoading = true;
       _cart = await _retrieveCartUseCase();
+      _onCartUpdated();
     } catch (e) {
       //TODO: handle error
     } finally {
@@ -49,6 +62,7 @@ abstract class _CartControllerBase with Store {
       _isLoading = true;
       _addProductToCartUseCase(product);
       _cart.addProduct(product);
+      _onCartUpdated();
     } catch (e) {
       //TODO: handle error
     } finally {
@@ -62,6 +76,7 @@ abstract class _CartControllerBase with Store {
       _isLoading = true;
       _removeProductFromCartUseCase(product);
       _cart.removeProduct(product.id);
+      _onCartUpdated();
     } catch (e) {
       //TODO: handle error
     } finally {
@@ -75,10 +90,16 @@ abstract class _CartControllerBase with Store {
       _isLoading = true;
       _clearCartUseCase();
       _cart.clearCart();
+      _onCartUpdated();
     } catch (e) {
       //TODO: handle error
     } finally {
       _isLoading = false;
     }
+  }
+
+  _onCartUpdated() {
+    _cartItemsQuantity = _cart.itemsQuanity;
+    _productsQuantity = _cart.productsQuantity;
   }
 }
