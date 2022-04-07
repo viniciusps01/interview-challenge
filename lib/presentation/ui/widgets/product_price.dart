@@ -18,7 +18,7 @@ class ProductPrice extends StatelessWidget {
       children: [
         currencySymbol ?? const RealCurrencySymbol(),
         Text(
-          price.toString(),
+          price.toStringAsFixed(2),
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
