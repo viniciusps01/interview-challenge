@@ -29,6 +29,14 @@ Environmentally Friendly – MacBook Air is made with a 100% recycled aluminum e
         '''Sistema operacional Android 10, MIUI 12 Mediatek Helio G80 processador (12 nm), tela sensível ao toque capacitiva IPS LCD, 16 milhµes de cores
 Tamanho 6,5 polegadas, resoluo 1080 x 2340 pixels Corning Gorilla Glass 3 proteo
 Compartimento para carto MicroSDXC (compartimento dedicado) cámera principal de 13 MP + 8 MP + 5 MP + cámera selfie de 8 MP
+Possui LED flash, HDR, sensores panormicos, impresso digital (montado na parte traseira), acelerómetro, proximidade, bússola, bateria Li-Po 5020 mAh, carregamento rápido de 18 W
+Sistema operacional Android 10, MIUI 12 Mediatek Helio G80 processador (12 nm), tela sensível ao toque capacitiva IPS LCD, 16 milhµes de cores
+Tamanho 6,5 polegadas, resoluo 1080 x 2340 pixels Corning Gorilla Glass 3 proteo
+Compartimento para carto MicroSDXC (compartimento dedicado) cámera principal de 13 MP + 8 MP + 5 MP + cámera selfie de 8 MP
+Possui LED flash, HDR, sensores panormicos, impresso digital (montado na parte traseira), acelerómetro, proximidade, bússola, bateria Li-Po 5020 mAh, carregamento rápido de 18 W
+Sistema operacional Android 10, MIUI 12 Mediatek Helio G80 processador (12 nm), tela sensível ao toque capacitiva IPS LCD, 16 milhµes de cores
+Tamanho 6,5 polegadas, resoluo 1080 x 2340 pixels Corning Gorilla Glass 3 proteo
+Compartimento para carto MicroSDXC (compartimento dedicado) cámera principal de 13 MP + 8 MP + 5 MP + cámera selfie de 8 MP
 Possui LED flash, HDR, sensores panormicos, impresso digital (montado na parte traseira), acelerómetro, proximidade, bússola, bateria Li-Po 5020 mAh, carregamento rápido de 18 W''',
     imageUrl: 'https://cf.shopee.com.br/file/519731f13adbb5e21e2b46438fa5382e',
     price: 1249.89,
@@ -41,6 +49,16 @@ Possui LED flash, HDR, sensores panormicos, impresso digital (montado na parte t
     title: 'Apple Iphone 11',
     description:
         '''This phone is unlocked and compatible with any carrier of choice on GSM and CDMA networks (e.g. AT&T, T-Mobile, Sprint, Verizon, US Cellular, Cricket, Metro, Tracfone, Mint Mobile, etc.).
+Tested for battery health and guaranteed to have a minimum battery capacity of 80%.
+Successfully passed a full diagnostic test which ensures like-new functionality and removal of any prior-user personal information.
+The device does not come with headphones or a SIM card. It does include a generic (Mfi certified) charger and charging cable.
+Inspected and guaranteed to have minimal cosmetic damage, which is not noticeable when the device is held at arm's length
+This phone is unlocked and compatible with any carrier of choice on GSM and CDMA networks (e.g. AT&T, T-Mobile, Sprint, Verizon, US Cellular, Cricket, Metro, Tracfone, Mint Mobile, etc.).
+Tested for battery health and guaranteed to have a minimum battery capacity of 80%.
+Successfully passed a full diagnostic test which ensures like-new functionality and removal of any prior-user personal information.
+The device does not come with headphones or a SIM card. It does include a generic (Mfi certified) charger and charging cable.
+Inspected and guaranteed to have minimal cosmetic damage, which is not noticeable when the device is held at arm's length
+This phone is unlocked and compatible with any carrier of choice on GSM and CDMA networks (e.g. AT&T, T-Mobile, Sprint, Verizon, US Cellular, Cricket, Metro, Tracfone, Mint Mobile, etc.).
 Tested for battery health and guaranteed to have a minimum battery capacity of 80%.
 Successfully passed a full diagnostic test which ensures like-new functionality and removal of any prior-user personal information.
 The device does not come with headphones or a SIM card. It does include a generic (Mfi certified) charger and charging cable.
@@ -71,7 +89,7 @@ Define appropriate boundaries and layers, and organize components and services
 See why designs and architectures go wrong, and how to prevent (or fix) these failures
 Clean Architecture is essential reading for every current or aspiring software architect, systems analyst, system designer, and software manager–and for every programmer who must execute someone else’s designs.''',
     imageUrl:
-        'https://images-na.ssl-images-amazon.com/images/I/41-sN-mzwKL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg',
+        'https://images-na.ssl-images-amazon.com/images/I/41-sN-mzwKL.jpg',
     price: 280.20,
     availableQuantity: 3550,
     colorName: 'Black',
@@ -88,10 +106,18 @@ Easy on the eyes – Now with adjustable warm light to shift screen shade from w
 Waterproof reading – Built to withstand accidental immersion in water, so you’re good from the beach to the bath.
 Find new stories – With Kindle Unlimited, get unlimited access to over 2 million titles, thousands of audiobooks, and more.
 Go hands-free – Pair with an Audible subscription and Bluetooth headphones or speakers to listen to your story.
+Kindle Paperwhite – Now with a 6.8” display and thinner borders, adjustable warm light, up to 10 weeks of battery life, and 20% faster page turns.
+Purpose-built for reading – With a flush-front design and 300 ppi glare-free display that reads like real paper, even in bright sunlight.
+More books in more places – Store thousands of titles, then take them all with you. A single charge via USB-C last weeks, not hours.
+Easy on the eyes – Now with adjustable warm light to shift screen shade from white to amber.
+Waterproof reading – Built to withstand accidental immersion in water, so you’re good from the beach to the bath.
+Find new stories – With Kindle Unlimited, get unlimited access to over 2 million titles, thousands of audiobooks, and more.
+Go hands-free – Pair with an Audible subscription and Bluetooth headphones or speakers to listen to your story.
+
 ''',
     imageUrl:
         'https://www.promobit.com.br/blog/wp-content/uploads/2019/02/12195850/ar/1200/kindle-paperwhite3.jpg',
-    price: 10000.0,
+    price: 558.0,
     availableQuantity: 697,
     colorName: 'Black',
     categories: ['Kindles'],
@@ -100,7 +126,15 @@ Go hands-free – Pair with an Audible subscription and Bluetooth headphones or 
     id: '0101',
     title: 'TBS1000C Digital Storage Oscilloscope',
     description:
-        '''Offering affordable performance in a compact design, the TBS1000C digital storage oscilloscope provides the features, versatility and durability required by today's educational institutions, embedded designers, and maker community.  The TBS1000C includes a 7-inch WVGA color display with up to 1 GS/s sample rate, bandwidths from 50 MHz to 200 MHz and a five-year warranty.  Its innovative courseware system integrates lab exercises with step-by-step instructions for students. The HelpEverywhere® system provides useful tips and hints throughout the user interface to make the instrument more approachable to a new user.''',
+        '''Offering affordable performance in a compact design, the TBS1000C digital storage oscilloscope provides the features, versatility and durability required by today's educational institutions, embedded designers, and maker community.  
+        The TBS1000C includes a 7-inch WVGA color display with up to 1 GS/s sample rate, bandwidths from 50 MHz to 200 MHz and a five-year warranty.  Its innovative courseware system integrates lab exercises with step-by-step instructions for students. 
+        The HelpEverywhere® system provides useful tips and hints throughout the user interface to make the instrument more approachable to a new user.
+        Offering affordable performance in a compact design, the TBS1000C digital storage oscilloscope provides the features, versatility and durability required by today's educational institutions, embedded designers, and maker community.  
+        The TBS1000C includes a 7-inch WVGA color display with up to 1 GS/s sample rate, bandwidths from 50 MHz to 200 MHz and a five-year warranty.  Its innovative courseware system integrates lab exercises with step-by-step instructions for students. 
+        The HelpEverywhere® system provides useful tips and hints throughout the user interface to make the instrument more approachable to a new user.
+        Offering affordable performance in a compact design, the TBS1000C digital storage oscilloscope provides the features, versatility and durability required by today's educational institutions, embedded designers, and maker community.  
+        The TBS1000C includes a 7-inch WVGA color display with up to 1 GS/s sample rate, bandwidths from 50 MHz to 200 MHz and a five-year warranty.  Its innovative courseware system integrates lab exercises with step-by-step instructions for students. 
+        The HelpEverywhere® system provides useful tips and hints throughout the user interface to make the instrument more approachable to a new user.''',
     imageUrl:
         'https://www.tek.com/-/media/images/product-series/tbs1000/tbs1000c-360x220.png?h=220&w=360',
     price: 3500.98,
@@ -167,6 +201,16 @@ WOMEN’S HEALTH TRACKING: With the female period tracking system, Band 5 record
 Enjoy over 100 games right out of the box with a 1 month Xbox Game Pass trial
 Watch 4K Blu-ray movies and stream 4K video on Netflix, Amazon, Hulu, Microsoft Movies & TV, and more
 Play with friends and family near and far—sitting together on the sofa or around the world on Xbox Live, the fastest, most reliable gaming network
+Xbox 1 games and accessories work together.
+Access your favorite entertainment through apps like YouTube, Netflix, and more
+Enjoy over 100 games right out of the box with a 1 month Xbox Game Pass trial
+Watch 4K Blu-ray movies and stream 4K video on Netflix, Amazon, Hulu, Microsoft Movies & TV, and more
+Play with friends and family near and far—sitting together on the sofa or around the world on Xbox Live, the fastest, most reliable gaming network
+Xbox 1 games and accessories work together.
+Access your favorite entertainment through apps like YouTube, Netflix, and more
+Enjoy over 100 games right out of the box with a 1 month Xbox Game Pass trial
+Watch 4K Blu-ray movies and stream 4K video on Netflix, Amazon, Hulu, Microsoft Movies & TV, and more
+Play with friends and family near and far—sitting together on the sofa or around the world on Xbox Live, the fastest, most reliable gaming network
 Xbox 1 games and accessories work together''',
     imageUrl: 'https://m.media-amazon.com/images/I/71NBQ2a52CL._SX522_.jpg',
     price: 2481.00,
@@ -179,6 +223,12 @@ Xbox 1 games and accessories work together''',
     title: 'Xbox Core Wireless Controller',
     description:
         '''Experience the modernized design of the Xbox Wireless Controller in Shock Blue, featuring sculpted surfaces and refined geometry for enhanced comfort and effortless control during gameplay with battery usage up to 40 hours.
+Stay on target with the hybrid D-pad, textured grip on the triggers, bumpers, and back-case. Plug in any compatible headset with the 3.5mm audio headset jack.
+Connect using the USB-C port for direct plug and play to console or PC. Support for AA batteries is included on the rear.
+Seamlessly capture and share content with the Share button.
+Use Xbox Wireless or Bluetooth to play across Xbox Series X|S, Xbox One, and Windows 10/11 devices.
+Compatible with Xbox Series X|S, Xbox One, and Windows 10/11 devices.
+Experience the modernized design of the Xbox Wireless Controller in Shock Blue, featuring sculpted surfaces and refined geometry for enhanced comfort and effortless control during gameplay with battery usage up to 40 hours.
 Stay on target with the hybrid D-pad, textured grip on the triggers, bumpers, and back-case. Plug in any compatible headset with the 3.5mm audio headset jack.
 Connect using the USB-C port for direct plug and play to console or PC. Support for AA batteries is included on the rear.
 Seamlessly capture and share content with the Share button.
