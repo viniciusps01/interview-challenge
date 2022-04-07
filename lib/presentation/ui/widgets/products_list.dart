@@ -8,12 +8,14 @@ class ProductsList extends StatelessWidget {
   final List<ProductDto> products;
   final Function(ProductDto) addProductToCart;
   final Function(ProductDto) removeProductFromCart;
+  final List<int>? chosenQuantities;
 
   const ProductsList({
     required this.isLoadingProducts,
     required this.products,
     required this.addProductToCart,
     required this.removeProductFromCart,
+    this.chosenQuantities,
     Key? key,
   }) : super(key: key);
 
@@ -29,10 +31,12 @@ class ProductsList extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.only(bottom: 10),
                 child: ProductCard(
-                    product: product,
-                    onPressed: () {},
-                    onAddPressed: () => addProductToCart(product),
-                    onRemovePressed: () => removeProductFromCart(product)),
+                  product: product,
+                  chosenQuantity: chosenQuantities?[index] ?? 0,
+                  onPressed: () {},
+                  onAddPressed: () => addProductToCart(product),
+                  onRemovePressed: () => removeProductFromCart(product),
+                ),
               );
             }));
   }

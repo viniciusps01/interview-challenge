@@ -4,6 +4,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 import 'package:interview_challenge/presentation/controllers/cart_controller/cart_controller.dart';
 import 'package:interview_challenge/presentation/controllers/products_controller/products_controller.dart';
+import 'package:interview_challenge/presentation/ui/pages/cart_page/cart_page.dart';
 
 import '../../widgets/products_list.dart';
 
@@ -21,7 +22,10 @@ class ProductsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Products')),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (_) => const CartPage()));
+        },
         child: Observer(
           builder: (_) => Badge(
             showBadge: _cartController.cartItemsQuantity != 0,
