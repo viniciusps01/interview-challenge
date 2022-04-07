@@ -4,7 +4,8 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 import 'package:interview_challenge/presentation/controllers/cart_controller/cart_controller.dart';
 import 'package:interview_challenge/presentation/controllers/products_controller/products_controller.dart';
-import 'package:interview_challenge/presentation/ui/widgets/product_card/product_card.dart';
+
+import '../../widgets/products_list.dart';
 
 class ProductsPage extends StatelessWidget {
   const ProductsPage({Key? key}) : super(key: key);
@@ -29,34 +30,14 @@ class ProductsPage extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
-        color: Colors.white,
-        padding: const EdgeInsets.all(8),
-        child: Observer(
-            name: 'Products',
-            builder: (_) {
-              if (_productsController.isLoading) {
-                return const Center(
-                  child: CircularProgressIndicator.adaptive(),
-                );
-              }
-              return ListView.builder(
-                  itemCount: _productsController.products!.length,
-                  itemBuilder: (_, index) {
-                    final product = _productsController.products![index];
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: ProductCard(
-                          product: product,
-                          onPressed: () {},
-                          onAddPressed: () =>
-                              _cartController.addProductToCart(product),
-                          onRemovePressed: () =>
-                              _cartController.removeProductFromCart(product)),
-                    );
-                  });
-            }),
-      ),
+      body: Observer(builder: (_) {
+        return ProductsList(
+          addProductToCart: _cartController.addProductToCart,
+          isLoadingProducts: _productsController.isLoading,
+          products: _productsController.products!,
+          removeProductFromCart: _cartController.removeProductFromCart,
+        );
+      }),
     );
   }
 }
